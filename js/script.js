@@ -1,5 +1,5 @@
 // Button for drop down in "Books" section
-function toggleHidden(button) {
+function toggleBookDescription(button) {
     const description = button.closest('.book-description');
     description.classList.toggle('show-content');
 
@@ -11,6 +11,22 @@ function toggleHidden(button) {
         button.setAttribute('class', 'read-more');
     }
 }
+
+// Button for drop down in "About Me" section
+function toggleAboutMeContent(button) {
+    const description = button.closest('#text');
+    description.classList.toggle('show-content');
+
+    if (description.classList.contains('show-content')) {
+        button.textContent = 'Less ▲';
+        button.setAttribute('class', 'read-more-less');
+    } else {
+        button.textContent = 'More ▼';
+        button.setAttribute('class', 'read-more');
+    }
+}
+
+
 
 //Back to top functionality
 window.onscroll = function() {scrollFunction()};
